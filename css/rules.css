@@ -1,0 +1,24 @@
+body{
+    /* for fontsize */
+    --font-xxs:.7em;
+    --font-xs:.9em;
+    --font-sm:1em;
+    --font-md:1.5em;
+    --font-lg:2em;
+    --font-xl:2.5em;
+    /* for spacing */
+    --space-xxs:.5em;
+    --space-xs:.8em;
+    --space-sm: 1em;
+    --space-md:2em;
+    --space-lg:3em;
+    --space-xl:5em;
+    --space-xxl:7em;
+    /* for color */
+    --graay: #e3e3e356;
+    --dark-grey:#3b3b3b;
+    --graay-small-opacity:#e3e3e3c5;
+    --dark-grey-small-opacity:#3b3b3b57;
+    --blue:#2572be;
+    --red:#dd4d50;
+}
