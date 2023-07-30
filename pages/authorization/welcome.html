@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(../../css/rules.css);
+
+        a {
+            text-decoration: none;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .welcomeContainer {
+            display: grid;
+            justify-content: center;
+        }
+
+        .welcomeCard {
+            margin-top: 10em;
+        }
+
+        #emailTag{
+            font-weight: bold;
+        }
+
+        .btnContainer {
+            width: fit-content;
+            padding-top: 1em;
+        }
+
+        .button {
+            cursor: pointer;
+            width: 100%;
+            background-color: var(--blue);
+            color: white;
+            font-size: 1em;
+            border: 1px solid #1D5D9B;
+            border-radius: 5px;
+            padding: var(--space-xs) var(--space-sm);
+        }
+
+        .button:hover {
+            cursor: pointer;
+            background-color: #16528e;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcomeContainer">
+        <div class="welcomeCard">
+            <h1>Welcome <span id="userName"></span></h1>
+            <p>We will send you a discount voucher to your email <a href="https://mail.google.com/mail/u/0/#inbox"><span id="emailTag"></span></a> as a welcome gift!</p>
+            <div class="btnContainer">
+                <a href="../../index.html" class="button">
+                    Continue to website
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let formData = JSON.parse(sessionStorage.getItem("user"));
+    console.log(formData)
+    let spanName = document.getElementById("userName");
+    let emailTag = document.getElementById("emailTag");
+    let btn = document.getElementById("continue");
+    spanName.innerText = formData.username;
+    emailTag.innerText = formData.email;
+</script>
+
+</html>

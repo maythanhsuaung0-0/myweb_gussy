@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/344ef59591.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../css/main.css"> 
+    <link rel="stylesheet" href="./signup.css">
+
+    <script src="./signup.js" type="module"></script>
+    
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="loginCardContainer">
+            <h3 class="logo">GUSSY</h3>
+            <div class="loginCard">
+                <h4>Sign Up</h4>
+                <form action="" id="form">
+                    <div class="inputContainer">
+                        <label for="username">Username</label>
+                        <input required class="input" type="username" id="username" placeholder="username">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="email">Email Addresss</label>
+                        <input required class="input" type="email" id="email" placeholder="name@example.com">
+                    </div>
+                    <div  class="inputContainer">
+                        <label for="password">Password</label>
+                        <div class="pwdContainer" id="passwordContainer">
+                            <input required type="password" id="password" placeholder="Create Password">
+                            <button class="icon" id="pwIcon">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error" id="displayWarning"></span>
+                    </div>
+                    <div  class="inputContainer">
+                        <label for="confirmPassword">
+                                Confirm Password
+                        </label>
+                        <div class="pwdContainer" id="confirmPasswordContainer">
+                            <input required type="password" id="confirmPassword" placeholder="Retype Password">
+                            <button class="icon" id="confirmPwIcon">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error" id="wrong"></span>
+                    </div>
+                    <button id="signUp" class=" button" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</html>

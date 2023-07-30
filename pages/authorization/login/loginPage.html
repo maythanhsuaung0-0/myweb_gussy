@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/344ef59591.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../../css/main.css"> 
+    <link rel="stylesheet" href="../signup.css">
+    <!-- js -->
+    <script src="./login.js" type="module"></script>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="loginCardContainer">
+            <h3 class="logo">GUSSY</h3>
+            <div class="loginCard">
+                <h4>Sign In</h4>
+                <form action="../welcome.html" id="signInForm">
+                    <div class="inputContainer">
+                        <label for="signInMail">Email Addresss</label>
+                        <input required class="input" type="email" id="signInMail" placeholder="name@example.com">
+                        <span class="error" id="displayErrEmail"></span>
+                    </div>
+                    <div  class="inputContainer">
+                        <label for="signInPwd">Password</label>
+                        <div class="pwdContainer" id="signInPwdContainer" >
+                            <input required type="password" id="signInPwd" placeholder="Enter Password">
+                            <button class="icon" id="loginIcon">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error" id="displayErrPwd"></span>
+                    </div>
+                    <input type="submit" class="button" id="signIn" value="Sign In">
+                    <span class="toSignUp">Don't you have an account? <a href="../signUp.html">Sign Up</a></span>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</html>
