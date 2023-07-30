@@ -1,95 +1,96 @@
 @import url(../../css/rules.css);
 .cartContainer {
-    display: grid;
-    grid-template-columns: auto 40%;
-    gap: 1em;
-    width: 80%;
-    margin: 6em auto 0;
+  display: grid;
+  grid-template-columns: auto 40%;
+  gap: 1em;
+  width: 80%;
+  margin: 6em auto 0;
 }
 
 .selectedItemsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .selectedItem {
-    display: grid;
-    grid-template-columns: 30% auto 10%;
-    gap: 2em;
-    margin: 1em 0;
+  display: grid;
+  grid-template-columns: 30% auto 10%;
+  gap: 2em;
+  margin: 1em 0;
 }
 
 .itemImg {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.272) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.272) 0px 1px 2px 0px;
 }
 
 .itemImg img {
-    display: block;
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
 }
 
 .itemDetailContainer {
-    display: flex;
-    flex-direction: column;
-    gap: .3em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
 }
-.itemDetailContainer div, .itemDetailContainer label{
-    font-size: .9em;
-    color: var(--dark-grey);
+.itemDetailContainer div,
+.itemDetailContainer label {
+  font-size: 0.9em;
+  color: var(--dark-grey);
 }
 .itemDetailContainer h5 {
-    margin-bottom: .5em;
-    font-size: 1.2em;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
 }
 
-
 .checkOut {
-    display: grid;
-    justify-content: center;
+  display: grid;
+  justify-content: center;
 }
 
 .checkTable {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 .checkRow {
-    display: block;
-    height: fit-content;
+  display: block;
+  height: fit-content;
 }
-.tdhead{
-font-weight: 600;
+.tdhead {
+  font-weight: 600;
 }
-.tdata,.tdhead{
-    padding: .2em .5em;
-    width: 100%;
-    min-width: 150px;
+.tdata,
+.tdhead {
+  padding: 0.2em 0.5em;
+  width: 100%;
+  min-width: 150px;
 }
 .totalRow {
-    border-top: 1px solid #c5c5c5;
+  border-top: 1px solid #c5c5c5;
 }
-.totalRow td{
-    padding-top: 1em;
+.totalRow td {
+  padding-top: 1em;
 }
-td button{
-    margin-top: 1em;
+td button {
+  margin-top: 1em;
 }
-label{
-    padding-right: 1em;
-    color: black;
+label {
+  padding-right: 1em;
+  color: black;
 }
 @media only screen and (max-width: 600px) {
-    .cartContainer {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        gap: 3em;
-    }
+  .cartContainer {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
 
-    .checkOut {
-        justify-content: center;
-    }
-
+  .checkOut {
+    justify-content: center;
+  }
 }

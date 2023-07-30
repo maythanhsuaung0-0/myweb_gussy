@@ -1,64 +1,66 @@
 @import url(../../css/rules.css);
-.warning{
-    border: 1px solid var(--red);
+.warning {
+  border: 1px solid var(--red);
 }
-.outline-none{
-    outline: none;
-    border: none;
+.outline-none {
+  outline: none;
+  border: none;
 }
-.error{
-    color: var(--red);
-    font-size: .7em;
+.error {
+  color: var(--red);
+  font-size: 0.7em;
 }
-.weak{
-    border: 1px solid var(--red) !important;
+.weak {
+  border: 1px solid var(--red) !important;
 }
-.strong{
-    border: 1px solid rgb(0, 189, 0) !important;
+.strong {
+  border: 1px solid rgb(0, 189, 0) !important;
 }
-.loginCardContainer{
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    border: 1px solid #c5c5c5;
-    padding: 2em;
+.loginCardContainer {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  border: 1px solid #c5c5c5;
+  padding: 2em;
 }
-.logo{
-    margin: 0;
+.logo {
+  margin: 0;
 }
-.inputContainer{
-    margin-bottom: 1em;
+.inputContainer {
+  margin-bottom: 1em;
 }
-.input,.pwdContainer input{
-    width: 100%;
-    box-sizing: border-box;
-    display: block;
-    font-size: .9em;
-    border: 1px solid #c5c5c5 ;
-    border-radius:5px;
-    padding: .5em 1em;
+.input,
+.pwdContainer input {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  font-size: 0.9em;
+  border: 1px solid #c5c5c5;
+  border-radius: 5px;
+  padding: 0.5em 1em;
 }
-.input,.pwdContainer{
-    margin-top: .5em;
+.input,
+.pwdContainer {
+  margin-top: 0.5em;
 }
 
-.pwdContainer{
-    display: flex;
-    border: 1px solid #c5c5c5 ;
-    border-radius:5px;
+.pwdContainer {
+  display: flex;
+  border: 1px solid #c5c5c5;
+  border-radius: 5px;
 }
-.pwdContainer input{
-    border: none;
-    outline: none;
+.pwdContainer input {
+  border: none;
+  outline: none;
 }
-.icon{
-    background:none;
-    border: none;
-    padding: 0 1em;
+.icon {
+  background: none;
+  border: none;
+  padding: 0 1em;
 }
-.toSignUp{
-    font-size: .8em;
-    display: block;
-    margin-top: 1em;
+.toSignUp {
+  font-size: 0.8em;
+  display: block;
+  margin-top: 1em;
 }
-.toSignUp a{
-    color: var(--blue);
+.toSignUp a {
+  color: var(--blue);
 }
