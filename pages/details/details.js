@@ -1,4 +1,4 @@
-import data from '../../clothing.json' assert {type:"json"}
+import data from '../../clothing.js'
 import * as funcs from '../../js/main.js'
 
 let param = new URLSearchParams(window.location.search);

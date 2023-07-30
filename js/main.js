@@ -1,6 +1,6 @@
-var currentUrl = window.location.href;
-var userProfile = JSON.parse(sessionStorage.getItem("user"))
-let favourites = JSON.parse(localStorage.getItem("favList"))
+var currentUrl = window.location.pathname;
+var userProfile = JSON.parse(sessionStorage.getItem("user"))|| []
+let favourites = JSON.parse(localStorage.getItem("favList")) || []
 let show = false;
 function create(element) {
     return document.createElement(element)
@@ -13,7 +13,7 @@ function sum(data) {
     })
     return result;
 }
-
+console.log("location", window.location)
 function finalCheckout(subtotal,deli,tax){
     if(!parseInt(deli)){
         console.log('n',deli)
@@ -32,8 +32,13 @@ function addQuantity(e,val){
 }
 function directLink(item, urlId) {
     item.onclick = function () {
-        if (currentUrl == "http://127.0.0.1:5500/lswm/index.html") {
-            window.location.href = "./pages/details/details.html?" + "id=" + urlId
+        console.log(currentUrl)
+        if (currentUrl == "/") {
+            window.location.href = currentUrl+"/pages/details/details.html?" + "id=" + urlId
+            console.log(currentUrl)
+        }
+        else if(currentUrl == "/index.html"){
+            window.location.href = "/pages/details/details.html?" + "id=" + urlId
         }
         else {
             window.location.href = "../details/details.html?" + "id=" + urlId
