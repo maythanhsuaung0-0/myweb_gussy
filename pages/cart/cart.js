@@ -1,5 +1,5 @@
 import * as funcs from "../../js/main.js";
-var userProfile = JSON.parse(sessionStorage.getItem("user"));
+let active = sessionStorage.getItem("activeUser");
 
 let myCart = JSON.parse(localStorage.getItem("cartList"));
 let cartContainer = document.getElementById("carts");
@@ -22,7 +22,7 @@ if (myCart && myCart.length > 0) {
 }
 else if(!myCart){
   funcs.removeAllChildNodes(checkout);
-  cartContainerMain.innerHTML = ` <h4 class = "oops">Oops.... There's no item in the cart yet</h4>`
+  cartContainerMain.innerHTML = ` <h4 class = "oops">The cart is empty now!! </h4>`
 
 }
 let sTotal = funcs.sum(myCart);
@@ -58,11 +58,12 @@ let paymentDetails = {
 };
 
 buyNowBtn.addEventListener("click", () => {
- if(userProfile){
+ if(active == "true"){
   const request = new PaymentRequest(paymentMethods, paymentDetails);
   request.show().then((paymentResponse) => {
     paymentResponse.complete("success").then(() => {
       localStorage.removeItem("cartList");
+      alert("Successfully purchased the items! Let us send you a confirmation mail in a min!")
       location.reload()
     });
   });
