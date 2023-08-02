@@ -1,4 +1,6 @@
 import * as funcs from "../../js/main.js";
+var userProfile = JSON.parse(sessionStorage.getItem("user"));
+
 let myCart = JSON.parse(localStorage.getItem("cartList"));
 let cartContainer = document.getElementById("carts");
 let cartAuthorization = document.getElementById("cartAuthorization");
@@ -56,6 +58,7 @@ let paymentDetails = {
 };
 
 buyNowBtn.addEventListener("click", () => {
+ if(userProfile){
   const request = new PaymentRequest(paymentMethods, paymentDetails);
   request.show().then((paymentResponse) => {
     paymentResponse.complete("success").then(() => {
@@ -63,4 +66,8 @@ buyNowBtn.addEventListener("click", () => {
       location.reload()
     });
   });
+ }
+ else{
+  location.href = "../authorization/login/loginPage.html"
+ }
 });
