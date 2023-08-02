@@ -10,6 +10,7 @@ body {
 }
 
 .container {
+    width:95%;
     margin: 0 auto;
     padding: 10px 12px;
 }
@@ -108,7 +109,7 @@ a {
 }
 .searchContainer{
     position: relative;
-    width: 20em;
+    width: 16em;
     height: 50px;
 }
 .searchbar {
