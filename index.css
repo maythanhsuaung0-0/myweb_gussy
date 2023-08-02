@@ -116,7 +116,12 @@ main {
 .chosen {
   color: #dd4d50;
 }
-
+.blueCart{
+  color: var(--blue);
+}
+.blackCart{
+  color: #000;
+}
 .item-data h4 {
   margin: 0;
 }
@@ -181,8 +186,12 @@ main {
   }
 
   .vector img {
+    display: block;
     right: 4em;
     width: 200px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
   }
 
   .vector1 img {

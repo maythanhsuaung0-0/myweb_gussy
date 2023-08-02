@@ -28,13 +28,9 @@ function findByKw(item, kw) {
   }
 }
 
-function removeAllChildNodes(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
-}
+
 function filtering(value) {
-  removeAllChildNodes(homeGallery);
+  funcs.removeAllChildNodes(homeGallery);
   if (value != "all") {
     var searchedData = data.clothing.filter((x) => findByKw(x, value));
     searchedData.forEach((item) => {

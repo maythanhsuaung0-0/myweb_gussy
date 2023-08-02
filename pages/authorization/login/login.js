@@ -16,12 +16,18 @@ if (!sessionStorage.getItem("user")) {
 
 let existingUser = JSON.parse(sessionStorage.getItem("user"));
 function checkMailExist(val) {
-  if (existingUser["email"] != val) {
+  if (existingUser["email"] != val && val != "") {
     mail.classList.add("weak");
     displayErrEmail.innerText =
       "Sorry, there is no account with this email address";
     return false;
-  } else {
+  } 
+  else if(val == ""){
+    mail.classList.remove("weak");
+    displayErrEmail.innerText = "";
+    return false;
+  }
+  else {
     mail.classList.remove("weak");
     displayErrEmail.innerText = "";
     return true;

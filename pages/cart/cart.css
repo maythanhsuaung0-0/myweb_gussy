@@ -82,6 +82,9 @@ label {
   padding-right: 1em;
   color: black;
 }
+.oops{
+  margin-left: 2em;
+}
 @media only screen and (max-width: 600px) {
   .cartContainer {
     width: 90%;

@@ -33,6 +33,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="./cart.js" type="module"></script>
+    <script>
+       let cart = JSON.parse(localStorage.getItem("cartList"))
+    </script>
   </head>
 
   <body>
@@ -95,10 +98,10 @@
         </div>
       </nav>
     </header>
-    <main class="cartContainer">
+    <main class="cartContainer" id="cartContainerMain">
       <div class="selectedItemsContainer" id="carts"></div>
       <div class="checkOut" id="checkOutContainer">
-        <div class="check">
+        <div class="check" id="check">
           <table>
             <tr>
               <td class="tdhead">Subtotal</td>

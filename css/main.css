@@ -10,7 +10,6 @@ body {
 }
 
 .container {
-    width: 95%;
     margin: 0 auto;
     padding: 10px 12px;
 }
@@ -214,6 +213,9 @@ main {
 
     .signup {
         display: inline;
+    }
+    .searchContainer{
+        width: 20em;
     }
     .searchbar{
         padding: 10px 30px;

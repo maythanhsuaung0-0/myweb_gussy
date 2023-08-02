@@ -8,4 +8,6 @@ let div = funcs.displayDetail(data.clothing[id]);
 let detailAuthorization = document.getElementById("detailAuthorization");
 funcs.settingProfile(detailAuthorization);
 
-content.appendChild(div);
+if(content){
+    content.appendChild(div);
+}

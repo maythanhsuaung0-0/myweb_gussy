@@ -2,15 +2,24 @@ var currentUrl = window.location.pathname;
 var userProfile = JSON.parse(sessionStorage.getItem("user")) || [];
 let favourites = JSON.parse(localStorage.getItem("favList")) || [];
 let show = false;
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 function create(element) {
   return document.createElement(element);
 }
 
 function sum(data) {
   var result = 0;
-  data.forEach((e) => {
-    result += e.price;
-  });
+  if(data){
+    data.forEach((e) => {
+      result += e.price;
+    });
+  }
   return result;
 }
 function finalCheckout(subtotal, deli, tax) {
@@ -23,9 +32,6 @@ function finalCheckout(subtotal, deli, tax) {
   let total = subtotal + deli;
   let afterTax = subtotal * (tax / 100);
   return total + afterTax;
-}
-function addQuantity(e, val) {
-  return e.value * val;
 }
 function directLink(item, urlId) {
   item.onclick = function () {
@@ -100,7 +106,6 @@ function createCardElement(data, page) {
     } else {
       icons.append(favIcon);
     }
-
     favIcon.onclick = function () {
       add(data, "favList");
       location.reload();
@@ -119,10 +124,11 @@ function createCardElement(data, page) {
     };
   }
   icons.classList = "icons";
-  cartIcon.classList = "cart";
+  // cartIcon.classList = "cart";
   description.appendChild(icons);
   cartIcon.onclick = function () {
     add(data, "cartList");
+    alert("successfully added to the cart")
   };
   itemContainer.classList = "item";
   img.src = provideURL(data.img);
@@ -202,6 +208,7 @@ function createSelectedItem(item) {
 }
 
 function displayDetail(item) {
+ if(item){
   let detailContainer = create("main");
   let product = create("div");
   let image = create("img");
@@ -210,22 +217,19 @@ function displayDetail(item) {
   let dataTable = create("table");
   let btnContainer = create("div");
   let addToCartBtn = create("button");
-  let buyNowBtn = create("button");
   btnContainer.classList = "links";
   addToCartBtn.classList = "btn btn-primary";
-  buyNowBtn.classList = "btn btn-primary";
   addToCartBtn.innerText = "Add to Cart";
   addToCartBtn.onclick = function () {
     add(item, "cartList");
+    alert("Successfully added the item to the cart")
   };
-  buyNowBtn.innerText = "Buy Now";
   let details = [item.color, item.gender, item.price, item.size];
   let detailsName = ["color", "gender", "price", "size"];
   detailContainer.classList = "detailContainer";
   product.classList = "product";
   description.classList = "description";
   btnContainer.appendChild(addToCartBtn);
-  btnContainer.appendChild(buyNowBtn);
   for (let i = 0; i < details.length; i++) {
     let tr = create("tr");
     let td1 = create("td");
@@ -247,10 +251,13 @@ function displayDetail(item) {
   detailContainer.appendChild(product);
   detailContainer.appendChild(description);
   return detailContainer;
+
+ }  
 }
 
 function settingProfile(parent) {
-  let active = sessionStorage.getItem("activeUser");
+  if(parent){
+    let active = sessionStorage.getItem("activeUser");
   if (active == "true") {
     let profileContainer = document.createElement("div");
     let profile = document.createElement("button");
@@ -282,8 +289,10 @@ function settingProfile(parent) {
     profileContainer.append(profile, detailPopUp);
     parent.replaceChild(profileContainer, parent.children[0]);
   }
+  }
 }
 export {
+  removeAllChildNodes,
   createCardElement,
   provideURL,
   displayDetail,
